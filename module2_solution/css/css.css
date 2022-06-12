@@ -7,9 +7,10 @@
     padding: 0;
 }
 
-body {
+
+/*body {
     margin-right: 10px;
-}
+}*/
 
 .row {
     width: 100%;
@@ -18,15 +19,14 @@ body {
 div.container {
     background-color: blanchedalmond;
     border: 1px solid rgb(201, 126, 29);
-    width: 100%;
+    width: 90%;
     padding-left: 7px;
     padding-right: 7px;
     padding-bottom: 7px;
-    margin-right: 10px;
-    margin-left: 10px;
+    margin-right: auto;
+    margin-left: auto;
     margin-bottom: 15px;
     position: relative;
-    /*top: -10%;*/
 }
 
 div.label1 {
