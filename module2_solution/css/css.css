@@ -11,7 +11,7 @@ h1 {
 }
 
 body {
-    background-image: url("/module2_solution/css/ice_cream.jpg");
+    background-image: url("https://yui0126.github.io/HTML_CSS_Java_coursera/module2_solution/css/ice_cream.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-color: rgba(255, 255, 255, 0.5);
