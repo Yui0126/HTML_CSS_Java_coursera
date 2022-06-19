@@ -54,6 +54,7 @@ body {
 .contents {
     box-sizing: border-box;
     background-color: #F4DADA;
+    font-size: 1em;
     padding: 10px;
     margin: 20px;
     text-align: left;
