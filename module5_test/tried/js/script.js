@@ -83,11 +83,15 @@ $(function() { // Same as document.addEventListener("DOMContentLoaded"...
         showLoading("#main-content");
         $ajaxUtils.sendGetRequest(
             allCategoriesUrl,
-            buildAndShowHomeHTML,
+            function(responseText) {
+                var categories = buildAndShowHomeHTML(categories)
+                    .innerHTML = responseText
+            }, // ***** <---- TODO: STEP 1: Substitute [...] ******
             true); // Explicitly setting the flag to get JSON from server processed into an object literal
     });
     // *** finish **
-
+    // var categories = buildAndShowHomeHTML(categories);
+    //vinsertHtml("#main-content", categoriesHTML)
 
     // Builds HTML for the home page based on categories array
     // returned from the server.
@@ -97,9 +101,19 @@ $(function() { // Same as document.addEventListener("DOMContentLoaded"...
         $ajaxUtils.sendGetRequest(
             homeHtmlUrl,
             function(homeHtml) {
-                var chosenCategoryShortName = "'" + chooseRandomCategory(categories).short_name + "'";
-                var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "randomCategoryShortName", chosenCategoryShortName);
-                insertHtml("#main-content", homeHtmlToInsertIntoMainPage);
+                $ajaxUtils.sendGetRequest(
+                    homeHtml,
+                    function(homeHtml) {
+                        var chooseRandomCategory = buildcategories
+                    }
+                )
+                var insertProperty = function(string, propName, propValue) {
+                    var chosenCategoryShortName = categories.randomCategoryShortName
+                }
+
+                var homeHtmlToInsertIntoMainPage =
+                    chooseRandomCategory(categories);
+                insertHtml("#main-content", buildAndShowHomeHTML);
             },
             false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
     }
@@ -153,7 +167,6 @@ $(function() { // Same as document.addEventListener("DOMContentLoaded"...
             menuItemsUrl + categoryShort,
             buildAndShowMenuItemsHTML);
     };
-
 
 
     // Builds HTML for the categories page based on the data
